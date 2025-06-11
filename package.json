@@ -1,0 +1,61 @@
+{
+  "name": "zotero-github-stars",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Zotero 插件：自动为条目查找并显示对应论文的 GitHub 仓库 Stars 数量。",
+  "config": {
+    "addonName": "Zotero GitHub Stars",
+    "addonID": "githubstars@jsrdcht.dev",
+    "addonRef": "githubstars",
+    "addonInstance": "GitHubStarsAddon",
+    "prefsPrefix": "extensions.zotero.githubstars"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsrdcht/zotero-github-stars.git"
+  },
+  "author": "jsrdcht",
+  "bugs": {
+    "url": "https://github.com/jsrdcht/zotero-github-stars/issues"
+  },
+  "homepage": "https://github.com/jsrdcht/zotero-github-stars#readme",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "start": "zotero-plugin serve",
+    "build": "zotero-plugin build && tsc --noEmit",
+    "pack": "npm run build",
+    "lint:check": "prettier --check . && eslint .",
+    "lint:fix": "prettier --write . && eslint . --fix",
+    "release": "zotero-plugin release",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-deps": "npm update --save"
+  },
+  "dependencies": {
+    "zotero-plugin-toolkit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "@types/node": "^22.15.30",
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.0",
+    "zotero-plugin-scaffold": "^0.6.0",
+    "zotero-types": "^4.0.3"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "endOfLine": "lf",
+    "overrides": [
+      {
+        "files": [
+          "*.xhtml"
+        ],
+        "options": {
+          "htmlWhitespaceSensitivity": "css"
+        }
+      }
+    ]
+  }
+}
